@@ -1,0 +1,19 @@
+<?xmlversion="1.0"?>
+<?AutomationRuntimeIOSystem Version = 1.0?>
+<IOCFG xmlns="http://www.br-automation.com/AR/IO" Version="2.0">
+<Module ID="#module_path#" Hardware="X20BC0083">
+    <Parameter ID="HardwareModuleName" Value="X20BC0083" />
+    <Parameter ID="Supervision" Value="on" />
+    <Parameter ID="LinkSelectorInfo" Value="off" />
+    <Parameter ID="IPGateway" Value="240" Type="DINT" />
+    <Parameter ID="Mode" Value="CN" />
+    <Parameter ID="ResponseTimeout" Value="25" Type="UDINT" />
+    <Parameter ID="CiR" Value="off" />
+    <Parameter ID="MuxNetworkSlot" Value="0" Type="UDINT" />
+    <Parameter ID="MinimalInputLatency" Value="off" />
+    <Parameter ID="EPL_Chained" Value="off" />
+    <Parameter ID="EPL_PReqDataInPResMN" Value="off" />
+    <Parameter ID="SyncMode" Value="SoC" />
+    <Parameter ID="EnableDNA" Value="off" />
+  </Module>
+</IOCFG>

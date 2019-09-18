@@ -1,0 +1,13 @@
+<?xmlversion="1.0"?>
+<?AutomationRuntimeIOSystem Version = 1.0?>
+<IOCFG xmlns="http://www.br-automation.com/AR/IO" Version="2.0">
+<Module ID="#module_path#" Hardware="X20AO2622">
+    <Parameter ID="HardwareModuleName" Value="X20AO2622" />
+  </Module><Module ID="#module_path#.IO" Hardware="X20AO2622">
+    <Parameter ID="FunctionModel" Value="FunctionModel001" />
+    <Parameter ID="FunctionModelNumber" Value="1" Type="USINT" />
+    <Parameter ID="Supervision" Value="on" />
+    <Parameter ID="ChannelType01" Value="-10V to +10V" />
+    <Parameter ID="ChannelType02" Value="-10V to +10V" />
+  </Module>
+</IOCFG>

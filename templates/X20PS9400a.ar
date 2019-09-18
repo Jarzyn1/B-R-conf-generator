@@ -1,0 +1,13 @@
+<?xmlversion="1.0"?>
+<?AutomationRuntimeIOSystem Version = 1.0?>
+<IOCFG xmlns="http://www.br-automation.com/AR/IO" Version="2.0">
+<Module ID="#module_path#" Hardware="X20PS9400a">
+    <Parameter ID="HardwareModuleName" Value="X20PS9400" />
+  </Module><Module ID="#module_path#.IO" Hardware="X20PS9400a">
+    <Parameter ID="FunctionModel" Value="Standard" />
+    <Parameter ID="FunctionModelNumber" Value="0" Type="USINT" />
+    <Parameter ID="Supervision" Value="on" />
+    <Parameter ID="StatusInfo" Value="on" />
+    <Parameter ID="PowerInfo" Value="off" />
+  </Module>
+</IOCFG>

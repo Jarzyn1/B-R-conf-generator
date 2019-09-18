@@ -1,0 +1,15 @@
+<?xmlversion="1.0"?>
+<?AutomationRuntimeIOSystem Version = 1.0?>
+<IOCFG xmlns="http://www.br-automation.com/AR/IO" Version="2.0">
+<Module ID="#module_path#" Hardware="X20AT2222">
+    <Parameter ID="HardwareModuleName" Value="X20AT2222" />
+  </Module><Module ID="#module_path#.IO" Hardware="X20AT2222">
+    <Parameter ID="FunctionModel" Value="Standard" />
+    <Parameter ID="FunctionModelNumber" Value="0" Type="USINT" />
+    <Parameter ID="Supervision" Value="on" />
+    <Parameter ID="IOCycleCounter" Value="off" />
+    <Parameter ID="InputFilter" Value="20ms" />
+    <Parameter ID="SensorType01" Value="PT100" />
+    <Parameter ID="SensorType02" Value="PT100" />
+  </Module>
+</IOCFG>

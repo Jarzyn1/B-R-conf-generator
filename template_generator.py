@@ -19,7 +19,8 @@ class Module:
                        '<IOCFG xmlns="http://www.br-automation.com/AR/IO" Version="2.0">\n' + self.text_ar + '\n</IOCFG>'
         self.text_io = '<?xmlversion="1.0" encoding="utf-8"?>\n' \
                        '<?AutomationRuntimeIOSystem Version="1.0"?>\n' \
-                       '<IO xmlns="http://www.br-automation.com/AR/IO">' + self.text_io + '\n</IO>\n'
+                       '<IO xmlns="http://www.br-automation.com/AR/IO">\n' \
+                       '<Links>\n'+ self.text_io + '\n</Links>\n</IO>\n'
 
     def assign_io(self, text_io):
         beginings = [m.start() for m in re.finditer('<LN', text_io)]

@@ -1,0 +1,21 @@
+<?xmlversion="1.0"?>
+<?AutomationRuntimeIOSystem Version = 1.0?>
+<IOCFG xmlns="http://www.br-automation.com/AR/IO" Version="2.0">
+<Module ID="#module_path#" Hardware="X20DC1376">
+    <Parameter ID="HardwareModuleName" Value="X20DC1376" />
+  </Module><Module ID="#module_path#.IO" Hardware="X20DC1376">
+    <Parameter ID="FunctionModel" Value="Standard" />
+    <Parameter ID="FunctionModelNumber" Value="0" Type="USINT" />
+    <Parameter ID="Supervision" Value="on" />
+    <Parameter ID="SDCInfo" Value="off" />
+    <Parameter ID="CounterStd01" Value="16Bit" />
+    <Parameter ID="CounterTimeInfo" Value="off" />
+    <Parameter ID="LatchMode" Value="off" />
+    <Parameter ID="ABRInputs" Value="off" />
+    <Parameter ID="BrokenWireConfig" Value="on" />
+    <Parameter ID="BWConfigChannel01" Value="timer0" />
+    <Parameter ID="BWConfigChannel02" Value="timer0" />
+    <Parameter ID="BWConfigChannel03" Value="timer0" />
+    <Parameter ID="BWTimer0" Value="0" Type="UDINT" />
+  </Module>
+</IOCFG>
