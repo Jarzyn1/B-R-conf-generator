@@ -65,7 +65,7 @@ class FileGenerator:
     def __init__(self, template_path='templates'):
         self.template_path = template_path
         self.module_idx_subject = 2
-        self.module_idx_test = 2
+        self.module_idx_test = 4 #PS,DC,AT hardcoded
         self.modules = []
         self.connections = {'di': [], 'do': [], 'ai': [], 'ao': []}
 
@@ -91,6 +91,7 @@ class FileGenerator:
                                                testing_module + '_test' + str(self.module_idx_test),
                                                self.generate_ar(testing_module, is_on_subject=False),
                                                self.generate_io(testing_module, is_on_subject=False)))
+            print(self.module_idx_test)
             self.module_idx_test += 1
         self.modules += modules
         if not module_type(module_name) == 'other':
@@ -192,7 +193,9 @@ class FileGenerator:
                   '<Module ID="$root" Source = "AR" SourceID="$root" />\n' \
                   '<Module ID="IF1.ST1" Source = "AR" SourceName="X20BC0083" />\n' \
                   '<Module ID="IF1.ST2" Source = "AR" SourceName="X20BC0083" />\n' \
-                  '<Module ID="IF1.ST1.IF1.ST1" Source = "AR" SourceName="X20PS9400a" />\n'
+                  '<Module ID="IF1.ST1.IF1.ST1" Source = "AR" SourceName="X20PS9400a" />\n' \
+                  '<Module ID="IF1.ST1.IF1.ST2" Source = "AR" SourceName="X20DC1376" />\n' \
+                  '<Module ID="IF1.ST1.IF1.ST3" Source = "AR" SourceName="X20AT2222" />\n'
         for module in self.modules:
             content += '<Module ID="' + module.path + '" Source = "Template" SourceName="' + module.file_name + '" />\n'
         content += '</IOCFG>'

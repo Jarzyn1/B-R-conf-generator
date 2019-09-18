@@ -344,9 +344,9 @@ class DB_offline:
         #         [1, 3, subject_modules[2], '[1,2]'], [1, 4, subject_modules[3], '[1,2]'],
         #         [1, 5, subject_modules[4], '[1,2]']]
         data = [[1, 1, subject_modules[0], '[]'], [1, 2, subject_modules[1], '[]'],
-                [1, 3, subject_modules[2], '[]'], [1, 4, subject_modules[3], '[1,2]'],
-                [1, 5, subject_modules[4], '[1,2]'], [1, 6, subject_modules[5], '[3,4]'],
-                [1, 7, subject_modules[6], '[1,4]']]
+                [1, 3, subject_modules[2], '[]'], [1, 4, subject_modules[3], '[1]'],
+                [1, 5, subject_modules[4], '[4]'], [1, 6, subject_modules[5], '[]'],
+                [1, 7, subject_modules[6], '[1,11]']]
         data_processed = []
 
         # First query - returns the list of all necessary module configuration files to automation studio
