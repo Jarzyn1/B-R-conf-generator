@@ -9,7 +9,7 @@ import SocketServer
 import collections
 import decimal
 import re
-from db_offline import *
+#from db_offline import *
 from mysql.connector import FieldType
 
 # Dictionary for translating odbc datatype to MpDatabase
@@ -324,8 +324,6 @@ class DB_offline:
         return self._jsonResponse
 
     def query(self, sql):
-
-
         begin = re.search('FROM', sql).start()
         end = re.search('WHERE', sql).start()
         table_name = sql[begin + 5:end - 1]
@@ -338,18 +336,24 @@ class DB_offline:
         for statement in re.sub(r'(\)\s*);', r'\1%;%', sql).split('%;%'):
             print('simulating executing: ' + statement)
         response = {}
-        subject_modules = ['X20AT2222', 'X20AI2622', 'X20DI9371', 'X20AO2622', 'X20DO9322']
+        #subject_modules = ['X20AT2222', 'X20AI2622', 'X20DI9371', 'X20AO2622', 'X20DO9322']
+        subject_modules = ['X20PS9400a', 'X20DC1376', 'X20AT2222', 'X20AI2622', 'X20DI9371', 'X20AO2622', 'X20DO9322']
 
         # simulation of database return data
-        data = [[1, 2, subject_modules[0], '[1,2]'], [1, 3, subject_modules[1], '[1,2]'],
-                [1, 4, subject_modules[2], '[1,2]'], [1, 5, subject_modules[3], '[1,2]'],
-                [1, 6, subject_modules[4], '[1,2]']]
+        # data = [[1, 1, subject_modules[0], '[1,2]'], [1, 2, subject_modules[1], '[1,2]'],
+        #         [1, 3, subject_modules[2], '[1,2]'], [1, 4, subject_modules[3], '[1,2]'],
+        #         [1, 5, subject_modules[4], '[1,2]']]
+        data = [[1, 1, subject_modules[0], '[]'], [1, 2, subject_modules[1], '[]'],
+                [1, 3, subject_modules[2], '[]'], [1, 4, subject_modules[3], '[1,2]'],
+                [1, 5, subject_modules[4], '[1,2]'], [1, 6, subject_modules[5], '[3,4]'],
+                [1, 7, subject_modules[6], '[1,4]']]
         data_processed = []
 
         # First query - returns the list of all necessary module configuration files to automation studio
         if table_name == 'modules':
             self._fileGenerator = FileGenerator(template_path='templates')
             for row in data:
+                print(row)
                 module_sub_idx = row[1]
                 module_name = row[2]
                 active_ports = eval(row[3])
@@ -417,7 +421,7 @@ class DB_offline:
 
 class S(BaseHTTPRequestHandler):
 
-    __sqlDb = DB()
+    __sqlDb = DB_offline()
 
     def _set_headers(self, contentLength):
 
