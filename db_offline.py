@@ -55,16 +55,23 @@ class DB_offline:
         for statement in re.sub(r'(\)\s*);', r'\1%;%', sql).split('%;%'):
             print('simulating executing: ' + statement)
         response = {}
-        subject_modules = ['X20AT2222', 'X20AI2622', 'X20DI9371', 'X20AO2622', 'X20DO9322']
-        data = [[1, 1, subject_modules[0], '[1,2]'], [1, 2, subject_modules[1], '[1,2]'],
-                [1, 3, subject_modules[2], '[1,2]'], [1, 4, subject_modules[3], '[1,2]'],
-                [1, 5, subject_modules[4], '[1,2]']]
+        #subject_modules = ['X20AT2222', 'X20AI2622', 'X20DI9371', 'X20AO2622', 'X20DO9322']
+        subject_modules = ['X20PS9400', 'X20DC1376', 'X20AT2222', 'X20AI2622', 'X20DI9371', 'X20AO2622', 'X20DO9322']
+        # data = [[1, 1, subject_modules[0], '[1,2]'], [1, 2, subject_modules[1], '[1,2]'],
+        #         [1, 3, subject_modules[2], '[1,2]'], [1, 4, subject_modules[3], '[1,2]'],
+        #         [1, 5, subject_modules[4], '[1,2]']]
+        data = [[1, 1, subject_modules[0], ''], [1, 2, subject_modules[1], ''],
+                [1, 3, subject_modules[2], ''], [1, 4, subject_modules[3], '[1,2]'],
+                [1, 5, subject_modules[4], '[1,2]'], [1, 6, subject_modules[5], '[3,4]'],
+                [1, 7, subject_modules[6], '[1,4]']]
+
         data_processed = []
 
         # First query in the cycle- returns the list of all necessary module configuration files to automation studio
         if self._query_type == 'modules':
             self._fileGenerator = FileGenerator(template_path='templates')
             for row in data:
+                print('row[2]', row[2])
                 modules = self._fileGenerator.add_module(row[2], eval(row[3]))
                 # method add_module returns a list of generated module info (including file names and contents). If the
                 # subject module is IO, the list contains 2 modules- subject and test
