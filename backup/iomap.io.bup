@@ -579,7 +579,6 @@
 <Prod Device="IF4.ST1.IF1.ST7" DPName="FirmwareVersion" Kind="io"/>
 </LN>
 <LN ID="%QX.IF4.ST1.IF1.ST7.DigitalOutput01" Type="BOOL">
-<Prod Device="TC#4-CPYDEV" DPName="::ZMIENNAAAAAAA" Kind="pv"/>
 <Cons Device="IF4.ST1.IF1.ST7" DPName="DigitalOutput01" Kind="io"/>
 </LN>
 <LN ID="%QX.IF4.ST1.IF1.ST7.DigitalOutput02" Type="BOOL">
